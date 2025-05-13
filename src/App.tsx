@@ -1,11 +1,12 @@
 import MenuItem from "./components/MenuItem";
 import OrderContent from "./components/OrderContent";
+import OrderTotals from "./components/OrderTotals";
 import { menuItems } from "./data/db"
 import useOrder from "./hooks/useOrder";
 
 function App() {
 
-    const { order, addItem, removeItemFromOrder } = useOrder()
+    const { order, addItem, removeItemFromOrder, calculateSubtotal } = useOrder()
 
     return (
         <>
@@ -30,6 +31,10 @@ function App() {
                     <OrderContent 
                         order={order}
                         removeItemFromOrder={removeItemFromOrder}
+                    />
+
+                    <OrderTotals 
+                        calculateSubtotal={calculateSubtotal}
                     />
                 </div>
             </main>

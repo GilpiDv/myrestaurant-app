@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import type { MenuItem, OrderItem } from "../types";
 
 export default function useOrder() {
@@ -28,9 +28,14 @@ export default function useOrder() {
         setOrder(updatedOrder);
     }
 
+    const calculateSubtotal = useMemo(() => 
+        order.reduce((total, item) => total + (item.quantity * item.price), 0), 
+    [order])
+
     return {
         order,
         addItem,
-        removeItemFromOrder
+        removeItemFromOrder,
+        calculateSubtotal
     }
 }
