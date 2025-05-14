@@ -33,7 +33,6 @@ export default function TipPercentageForm({tip, setTip, order}: TipPercentageFor
                         >
                             <FontAwesomeIcon icon={faPlus} />
                         </button>
-                        {/* <label htmlFor={'tip_' + tipOption.id}>{tipOption.label}</label> */}
                     </div>
             </form>
         </div>
