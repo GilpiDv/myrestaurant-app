@@ -11,14 +11,14 @@ function App() {
 
     return (
         <>
-            <header className="bg-amber-200 py-5">
-                <h1 className="text-center font-black text-4xl">Tip Calculator</h1>
+            <header className="py-6">
+                <h1 className="text-center font-black text-6xl">Tip Calculator</h1>
             </header>
 
-            <main className="max-w-7xl mx-auto py-20 grid md:grid-cols-2">
+            <main className="max-w-10/12 mx-auto pt-12 grid md:grid-cols-2">
                 <div className="p-5">
                     <h2 className="text-4xl font-black">Menu</h2>
-                    <div className="space-y-3 mt-8">
+                    <div className="mt-8 grid grid-cols-2 gap-2 menu-items-container">
                         {menuItems.map(item => (
                             <MenuItem 
                                 key={item.id}
@@ -28,7 +28,7 @@ function App() {
                         ))}
                     </div>
                 </div>
-                <div className="border border-dashed border-slate-200 p-5 rounded-lg space-y-10">
+                <div className="border border-dashed border-slate-200 p-5 rounded-lg space-y-10 order-container">
                     <OrderContent 
                         order={order}
                         removeItemFromOrder={removeItemFromOrder}

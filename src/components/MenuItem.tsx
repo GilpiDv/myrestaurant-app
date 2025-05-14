@@ -8,16 +8,16 @@ type MenuItemProps = {
 export default function MenuItem({item, addItem} : MenuItemProps) {
 	return (
 		<button 
-			type="button" 
-			className="border-2 border-teal-400 hover:bg-teal-200 w-full p-3 flex justify-between text-lg rounded-lg"
-			onClick={() => addItem(item)}
-		>
-			<p>
-				{item.name}
-			</p>
-			<p className="font-black">
-				${item.price}
-			</p>
-		</button>		
+            type="button" 
+            className="cursor-pointer p-3 flex justify-between items-center text-lg rounded-lg"
+            onClick={() => addItem(item)}
+        >
+            <p className="truncate font-medium">
+                {item.name}
+            </p>
+            <p className="font-black">
+                ${item.price}
+            </p>
+        </button>	
 	)
 }

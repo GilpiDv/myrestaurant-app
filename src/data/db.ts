@@ -65,6 +65,11 @@ export const menuItems : MenuItem[] = [
 
 export const tipOptions = [
   {
+    id: 'tip-0',
+    value: 0,
+    label: '0%'
+  },
+  {
     id: 'tip-10',
     value: .10,
     label: '10%'
@@ -78,5 +83,5 @@ export const tipOptions = [
     id: 'tip-50',
     value: .50,
     label: '50%'
-  },
+  }
 ]

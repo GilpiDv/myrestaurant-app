@@ -23,6 +23,16 @@ export default function OrderTotals({subtotal, tipAmount, grandTotal}: OrderTota
                     <span className='font-bold'>{formatCurrency(grandTotal)}</span>
                 </p>
             </div>
+
+            <button
+                className={`w-full bg-black p-3 uppercase text-white font-bold cursor-pointer col-span-2 my-10 
+                    ${
+                        grandTotal === 0 ? 'opacity-10 cursor-not-allowed' : 'hover:bg-teal-200 hover:text-black'
+                    }`}                
+                disabled={grandTotal === 0}
+            >
+                Save Order
+            </button>
         </>
     )
 }
