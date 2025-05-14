@@ -1,12 +1,12 @@
 import { formatCurrency } from "../helpers"
 
 type OrderTotalProps = {
-    calculateSubtotal: number
+    subtotal: number
     tipAmount: number
     grandTotal: number
 }
 
-export default function OrderTotals({calculateSubtotal, tipAmount, grandTotal}: OrderTotalProps) {
+export default function OrderTotals({subtotal, tipAmount, grandTotal}: OrderTotalProps) {
 
     return (
         <>
@@ -14,7 +14,7 @@ export default function OrderTotals({calculateSubtotal, tipAmount, grandTotal}: 
                 <h2 className='font-black text-2xl'>Totals:</h2>
 
                 <p> Subtotal: {''}
-                    <span className='font-bold'>{formatCurrency(calculateSubtotal)}</span>
+                    <span className='font-bold'>{formatCurrency(subtotal)}</span>
                 </p>
                 <p> Tip: {''}
                     <span className='font-bold'>{formatCurrency(tipAmount)}</span>

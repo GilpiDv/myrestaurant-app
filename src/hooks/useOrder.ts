@@ -29,24 +29,23 @@ export default function useOrder() {
         setOrder(updatedOrder);
     }
 
-    const calculateSubtotal = useMemo(() => 
+    const subtotal = useMemo(() => 
         order.reduce((total, item) => total + (item.quantity * item.price), 0), 
     [order])
 
     const tipAmount = useMemo(() => {
-        return tip * calculateSubtotal;
+        return tip * subtotal;
     }, [tip, order])
 
     const grandTotal = useMemo(() => {
-        return tipAmount + calculateSubtotal;
+        return tipAmount + subtotal;
     }, [tip, order])
 
     return {
         order,
         addItem,
         removeItemFromOrder,
-        calculateSubtotal,
-        tip,
+        subtotal,
         setTip,
         tipAmount,
         grandTotal

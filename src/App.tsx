@@ -7,7 +7,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
 
-    const { order, addItem, removeItemFromOrder, calculateSubtotal, tip, setTip, tipAmount, grandTotal } = useOrder()
+    const { order, addItem, removeItemFromOrder, subtotal, setTip, tipAmount, grandTotal } = useOrder()
 
     return (
         <>
@@ -40,7 +40,7 @@ function App() {
                         />
 
                         <OrderTotals
-                            calculateSubtotal={calculateSubtotal}
+                            subtotal={subtotal}
                             tipAmount={tipAmount}
                             grandTotal={grandTotal}
                         />
