@@ -7,7 +7,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
 
-    const { order, addItem, removeItemFromOrder, subtotal, setTip, tipAmount, grandTotal } = useOrder()
+    const { order, addItem, removeItemFromOrder, subtotal, tip, setTip, tipAmount, grandTotal, saveOrder } = useOrder()
 
     return (
         <>
@@ -37,12 +37,14 @@ function App() {
                     <div className="grid md:grid-cols-2">
                         <TipPercentageForm 
                             setTip={setTip}
+                            tip={tip}
                         />
 
                         <OrderTotals
                             subtotal={subtotal}
                             tipAmount={tipAmount}
                             grandTotal={grandTotal}
+                            saveOrder={saveOrder}
                         />
                     </div>
                 </div>

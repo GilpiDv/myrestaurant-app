@@ -41,13 +41,20 @@ export default function useOrder() {
         return tipAmount + subtotal;
     }, [tip, order])
 
+    const saveOrder = () => {
+        setOrder([]);
+        setTip(0);
+    }
+
     return {
         order,
         addItem,
         removeItemFromOrder,
         subtotal,
+        tip,
         setTip,
         tipAmount,
-        grandTotal
+        grandTotal,
+        saveOrder
     }
 }
