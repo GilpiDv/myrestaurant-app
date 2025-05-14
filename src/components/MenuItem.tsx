@@ -13,7 +13,7 @@ export default function MenuItem({item, addItem} : MenuItemProps) {
             onClick={() => addItem(item)}
             title={item.name}
         >
-            <img width={'40vh'} src={`/img/${item.image}`} alt="" />
+            <img width={'40vh'} src={`/img/${item.image}`} alt={item.image} className="pr-1.5"/>
             <p className="truncate font-medium">
                 {item.name}
             </p>

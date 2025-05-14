@@ -15,10 +15,10 @@ function App() {
                 <h1 className="text-center font-black text-6xl">Tip Calculator</h1>
             </header>
 
-            <main className="max-w-10/12 mx-auto pt-12 grid lg:grid-cols-2">
+            <main className="lg:max-w-10/12 mx-auto pt-12 grid lg:grid-cols-2">
                 <div className="p-5">
                     <h2 className="text-4xl font-black">Menu</h2>
-                    <div className="mt-8 grid grid-cols-2 gap-2 menu-items-container">
+                    <div className="mt-8 grid grid-cols-1 gap-2 menu-items-container lg:grid-cols-2">
                         {menuItems.map(item => (
                             <MenuItem 
                                 key={item.id}
