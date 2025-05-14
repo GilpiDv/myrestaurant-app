@@ -1,6 +1,6 @@
 import { formatCurrency } from "../helpers"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown, faTrash, faBellConcierge  } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faChevronDown, faTrash, faBellConcierge, faCaretRight  } from '@fortawesome/free-solid-svg-icons'
 import type { OrderItem } from "../types"
 
 type OrderContentProps = {
@@ -29,16 +29,19 @@ export default function OrderContent({order, removeItemFromOrder, increaseQuanti
                                 <img className="w-16 h-16 object-cover" src={`/img/${item.image}`} alt="" />
                                 <div>
                                     <p className="text-lg">
-                                        {item.name} - {formatCurrency(item.price)}
+                                        <span className="font-medium">{item.name}</span> - <span className="font-semibold">{formatCurrency(item.price)}</span>
                                     </p>
                                     <p className="space-x-2">
-                                        <button className="btn-change-quantity" onClick={() => increaseQuantity(item.id)} disabled={item.quantity === maxItems}>
-                                           <FontAwesomeIcon icon={faChevronUp} />
-                                        </button>
-                                        <button className="btn-change-quantity mr-3" onClick={() => decreaseQuantity(item.id)} disabled={item.quantity === minItems}>
+                                        <button className="btn-change-quantity" onClick={() => decreaseQuantity(item.id)} disabled={item.quantity === minItems}>
                                             <FontAwesomeIcon icon={faChevronDown} />
                                         </button>
-                                        Quantity: {item.quantity} - {formatCurrency(item.price * item.quantity)}
+                                        <button className="btn-change-quantity mr-3" onClick={() => increaseQuantity(item.id)} disabled={item.quantity === maxItems}>
+                                           <FontAwesomeIcon icon={faChevronUp} />
+                                        </button>
+                                        Quantity: {''} 
+                                        <span className="font-semibold">{item.quantity}</span>
+                                        <FontAwesomeIcon icon={faCaretRight} />
+                                        <span className="font-semibold">{formatCurrency(item.price * item.quantity)}</span>
                                     </p>
                                 </div>
                             </div>

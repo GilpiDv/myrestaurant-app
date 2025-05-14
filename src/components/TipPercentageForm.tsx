@@ -22,7 +22,7 @@ export default function TipPercentageForm({tip, setTip, order}: TipPercentageFor
                         >
                             <FontAwesomeIcon icon={faMinus} />
                         </button>
-                        <p className="text-md font-bold">
+                        <p className="text-md font-bold min-w-10">
                             {tip} %
                         </p>
                         <button
