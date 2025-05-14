@@ -1,6 +1,6 @@
 import { formatCurrency } from "../helpers"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp, faChevronDown, faTrash } from '@fortawesome/free-solid-svg-icons'
 import type { OrderItem } from "../types"
 
 type OrderContentProps = {
@@ -17,12 +17,12 @@ export default function OrderContent({order, removeItemFromOrder, increaseQuanti
     <div>
         <h2 className='font-black text-4xl'>Order</h2>
 
-        <div className="space-y-3 mt-8 h-[35vh] overflow-y-auto p-3">
+        <div className="space-y-3 mt-8 h-[35vh] overflow-y-auto p-3 border border-white shadow-md/20 shadow-gray-400 rounded-lg">
             {order.length === 0 ? 
                 <p className="text-center">Order is empty</p> : 
                 (
                     order.map( item => (
-                        <div key={item.id} className="flex justify-between items-center border-t border-teal-500 py-5 last-of-type:border-b">
+                        <div key={item.id} className="flex justify-between items-center py-5 border-b border-b-white last-of-type:border-b-0 ">
                             <div className="flex items-center space-x-4">
                                 <img className="w-16 h-16 object-cover" src={`/img/${item.image}`} alt="" />
                                 <div>
@@ -41,7 +41,7 @@ export default function OrderContent({order, removeItemFromOrder, increaseQuanti
                                 </div>
                             </div>
                             <button onClick={() => removeItemFromOrder(item.id)} className="bg-red-600 h-8 w-8 rounded-full text-white font-black cursor-pointer">
-                                X
+                                <FontAwesomeIcon icon={faTrash} />
                             </button>
                         </div>
                     ))
