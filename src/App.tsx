@@ -7,7 +7,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
 
-    const { order, addItem, removeItemFromOrder, subtotal, tip, setTip, tipAmount, grandTotal, saveOrder } = useOrder()
+    const { order, addItem, removeItemFromOrder, subtotal, tip, setTip, tipAmount, grandTotal, saveOrder, increaseQuantity, decreaseQuantity, MAX_ITEMS, MIN_ITEMS } = useOrder()
 
     return (
         <>
@@ -32,6 +32,10 @@ function App() {
                     <OrderContent 
                         order={order}
                         removeItemFromOrder={removeItemFromOrder}
+                        increaseQuantity={increaseQuantity}
+                        decreaseQuantity={decreaseQuantity}
+                        maxItems={MAX_ITEMS}
+                        minItems={MIN_ITEMS}
                     />
 
                     <div className="grid md:grid-cols-2">

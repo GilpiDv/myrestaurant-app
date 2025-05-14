@@ -1,12 +1,18 @@
 import { formatCurrency } from "../helpers"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
 import type { OrderItem } from "../types"
 
 type OrderContentProps = {
     order: OrderItem[]
     removeItemFromOrder: (orderItemId: OrderItem['id']) => void 
+    increaseQuantity: (id: OrderItem["id"]) => void
+    decreaseQuantity: (id: OrderItem["id"]) => void
+    maxItems: number
+    minItems: number
 }
 
-export default function OrderContent({order, removeItemFromOrder} : OrderContentProps) {
+export default function OrderContent({order, removeItemFromOrder, increaseQuantity, decreaseQuantity, maxItems, minItems} : OrderContentProps) {
   return (
     <div>
         <h2 className='font-black text-4xl'>Order</h2>
@@ -23,7 +29,13 @@ export default function OrderContent({order, removeItemFromOrder} : OrderContent
                                     <p className="text-lg">
                                         {item.name} - {formatCurrency(item.price)}
                                     </p>
-                                    <p className="font-black">
+                                    <p className="space-x-2">
+                                        <button className="btn-change-quantity" onClick={() => increaseQuantity(item.id)} disabled={item.quantity === maxItems}>
+                                           <FontAwesomeIcon icon={faChevronUp} />
+                                        </button>
+                                        <button className="btn-change-quantity mr-3" onClick={() => decreaseQuantity(item.id)} disabled={item.quantity === minItems}>
+                                            <FontAwesomeIcon icon={faChevronDown} />
+                                        </button>
                                         Quantity: {item.quantity} - {formatCurrency(item.price * item.quantity)}
                                     </p>
                                 </div>

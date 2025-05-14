@@ -19,3 +19,23 @@ header {
 .order-container {
     background-color: #D1F8EF;
 }
+
+.btn-change-quantity {
+    cursor: pointer;
+    height: 1.5rem;
+    width: 1.6rem;
+    border-radius: 0.5rem;
+    background-color: #A1E3F9;
+    color: #3674B5;
+    transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+
+    &:hover:not(:disabled) {
+        background-color: #578FCA;
+        color: #A1E3F9;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+}

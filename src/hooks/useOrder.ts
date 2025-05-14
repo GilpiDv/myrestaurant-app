@@ -6,10 +6,15 @@ export default function useOrder() {
     const [order, setOrder] = useState<OrderItem[]>([]);
     const [tip, setTip] = useState(0);
 
-    const addItem = (item: MenuItem) => {
-        const itemExists = order.find(orderItem => orderItem.id === item.id)
+    const MAX_ITEMS = 10;
+    const MIN_ITEMS = 1;
 
-        if(itemExists) {
+    const addItem = (item: MenuItem) => {
+        const itemExists = order.findIndex((orderItem) => {
+            return orderItem.id === item.id;
+        });
+        if(itemExists >= 0) {
+            if(order[itemExists].quantity >= MAX_ITEMS) return;
             const updatedOrder = order.map(orderItem => 
                 orderItem.id === item.id ? {...orderItem, quantity: orderItem.quantity + 1} : orderItem
             );
@@ -46,6 +51,36 @@ export default function useOrder() {
         setTip(0);
     }
 
+    const increaseQuantity = (id: OrderItem['id']) => {
+        const updatedOrder = order.map(item => {
+            if(item.id === id && item.quantity < MAX_ITEMS) {
+                return {
+                    ...item,
+                    quantity: item.quantity + 1
+                };
+            }
+
+            return item;
+        });
+
+        setOrder(updatedOrder);
+    }
+
+    const decreaseQuantity = (id : OrderItem['id']) => {
+        const updatedOrder = order.map(item => {
+            if(item.id === id && item.quantity > MIN_ITEMS) {
+                return {
+                    ...item,
+                    quantity: item.quantity - 1
+                };
+            }
+
+            return item;
+        });
+
+        setOrder(updatedOrder);
+    }
+
     return {
         order,
         addItem,
@@ -55,6 +90,10 @@ export default function useOrder() {
         setTip,
         tipAmount,
         grandTotal,
-        saveOrder
+        saveOrder,
+        increaseQuantity,
+        decreaseQuantity,
+        MAX_ITEMS,
+        MIN_ITEMS
     }
 }
