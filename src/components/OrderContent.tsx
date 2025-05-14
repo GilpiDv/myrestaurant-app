@@ -17,15 +17,18 @@ export default function OrderContent({order, removeItemFromOrder} : OrderContent
                 (
                     order.map( item => (
                         <div key={item.id} className="flex justify-between items-center border-t border-teal-500 py-5 last-of-type:border-b">
-                            <div>
-                                <p className="text-lg">
-                                    {item.name} - {formatCurrency(item.price)}
-                                </p>
-                                <p className="font-black">
-                                    Quantity: {item.quantity} - {formatCurrency(item.price * item.quantity)}
-                                </p>
+                            <div className="flex items-center space-x-4">
+                                <img className="w-16 h-16 object-cover" src={`/img/${item.image}`} alt="" />
+                                <div>
+                                    <p className="text-lg">
+                                        {item.name} - {formatCurrency(item.price)}
+                                    </p>
+                                    <p className="font-black">
+                                        Quantity: {item.quantity} - {formatCurrency(item.price * item.quantity)}
+                                    </p>
+                                </div>
                             </div>
-                            <button onClick={() => removeItemFromOrder(item.id)} className="bg-red-600 h-8 w-8 rounded-full text-white font-black">
+                            <button onClick={() => removeItemFromOrder(item.id)} className="bg-red-600 h-8 w-8 rounded-full text-white font-black cursor-pointer">
                                 X
                             </button>
                         </div>

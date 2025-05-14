@@ -11,7 +11,9 @@ export default function MenuItem({item, addItem} : MenuItemProps) {
             type="button" 
             className="cursor-pointer p-3 flex justify-between items-center text-lg rounded-lg"
             onClick={() => addItem(item)}
+            title={item.name}
         >
+            <img width={'40vh'} src={`/img/${item.image}`} alt="" />
             <p className="truncate font-medium">
                 {item.name}
             </p>
