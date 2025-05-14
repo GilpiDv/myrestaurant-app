@@ -39,7 +39,7 @@ export default function useOrder() {
     [order])
 
     const tipAmount = useMemo(() => {
-        return tip * subtotal;
+        return (tip / 100) * subtotal;
     }, [tip, order])
 
     const grandTotal = useMemo(() => {

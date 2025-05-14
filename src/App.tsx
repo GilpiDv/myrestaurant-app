@@ -42,6 +42,7 @@ function App() {
                         <TipPercentageForm 
                             setTip={setTip}
                             tip={tip}
+                            order={order}
                         />
 
                         <OrderTotals
