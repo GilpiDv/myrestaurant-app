@@ -1,12 +1,13 @@
 import MenuItem from "./components/MenuItem";
 import OrderContent from "./components/OrderContent";
 import OrderTotals from "./components/OrderTotals";
+import TipPercentageForm from "./components/TipPercentageForm";
 import { menuItems } from "./data/db"
 import useOrder from "./hooks/useOrder";
 
 function App() {
 
-    const { order, addItem, removeItemFromOrder, calculateSubtotal } = useOrder()
+    const { order, addItem, removeItemFromOrder, calculateSubtotal, tip, setTip, tipAmount, grandTotal } = useOrder()
 
     return (
         <>
@@ -33,9 +34,17 @@ function App() {
                         removeItemFromOrder={removeItemFromOrder}
                     />
 
-                    <OrderTotals 
-                        calculateSubtotal={calculateSubtotal}
-                    />
+                    <div className="grid md:grid-cols-2">
+                        <TipPercentageForm 
+                            setTip={setTip}
+                        />
+
+                        <OrderTotals
+                            calculateSubtotal={calculateSubtotal}
+                            tipAmount={tipAmount}
+                            grandTotal={grandTotal}
+                        />
+                    </div>
                 </div>
             </main>
         </>
