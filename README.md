@@ -46,7 +46,7 @@ src/
 
 1. Clone this repository:
    ```bash
-   git clone <REPOSITORY_URL>
+   git clone https://github.com/GilpiDv/tip-calculator.git
    cd tip-calculator
    ```
 
