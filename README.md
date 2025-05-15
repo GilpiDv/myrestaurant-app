@@ -1,14 +1,17 @@
-# Tip Calculator
+# Restaurant Order & Tip Calculator
 
-This project is a **Tip Calculator** application built with **React**, **TypeScript**, and **Vite**. It allows users to select menu items, adjust quantities, calculate tips, and view order totals.
+This project is a **Restaurant Order & Tip Calculator** application built with **React**, **TypeScript**, and **Vite**. It allows users to browse menu categories, select items, adjust quantities, calculate tips, and view order totals in a modern, responsive UI.
 
 ## Features
 
-- **Interactive Menu**: Users can add menu items to their order.
+- **Category Selection**: Browse menu items by category with animated transitions.
+- **Interactive Menu**: Add menu items to your order with a single click.
 - **Quantity Management**: Increase or decrease the quantity of each item.
 - **Tip Calculation**: Adjust the tip percentage and automatically calculate the total.
 - **Dynamic Totals**: Displays the subtotal, tip amount, and grand total in real-time.
-- **Modern UI**: Styled with **TailwindCSS**.
+- **Order Drawer**: Slide-up order summary with editable contents.
+- **Modern UI**: Styled with **TailwindCSS** and animated with **Framer Motion**.
+- **Responsive Design**: Works on desktop and mobile devices.
 
 ## Project Structure
 
@@ -24,29 +27,47 @@ tsconfig.node.json
 vite.config.ts
 public/
     img/
-        (cake.svg, coffee.svg, juice.svg, pizza.svg, steak.svg, tequila.svg)
+        appetizers.jpg
+        beverages.jpg
+        burguers.jpg
+        cake.svg
+        coffee.svg
+        desserts.jpg
+        juice.svg
+        kids-menu.jpg
+        pizza.jpeg
+        pizza.svg
+        restaurant-logo.png
+        steak.jpg
+        steak.svg
+        tacos.jpg
+        tequila.svg
 src/
     App.tsx
     index.css
     main.tsx
     vite-env.d.ts
     components/
-        (MenuItem.tsx, OrderContent.tsx, OrderTotals.tsx, TipPercentageForm.tsx)
+        MenuCategories.tsx
+        MenuItem.tsx
+        OrderContent.tsx
+        OrderTotals.tsx
+        TipPercentageForm.tsx
     data/
-        (db.ts)
+        db.ts
     helpers/
-        (index.ts)
+        index.ts
     hooks/
-        (useOrder.ts)
+        useOrder.ts
     types/
-        (index.ts)
+        index.ts
 ```
 
 ## Installation
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/GilpiDv/tip-calculator.git
+   git clone https://github.com/GilpiDv/myrestaurant-app.git
    cd tip-calculator
    ```
 
@@ -68,6 +89,8 @@ src/
 - **TypeScript**: A statically typed superset of JavaScript.
 - **Vite**: A fast build tool for modern web projects.
 - **TailwindCSS**: A utility-first CSS framework for styling.
+- **Framer Motion**: For smooth UI animations.
+- **clsx**: Utility for conditionally joining classNames.
 - **FontAwesome**: Icons to enhance the user interface.
 
 ## How to Use
@@ -79,7 +102,12 @@ src/
 
 2. Open the app in your browser at [http://localhost:5173](http://localhost:5173).
 
-3. Interact with the menu, adjust quantities, select a tip percentage, and save your order.
+3. **Browse the Menu**: Select a category to view available items.
+4. **Add Items**: Click on menu items to add them to your order.
+5. **Adjust Quantities**: Use the plus/minus buttons to change item quantities.
+6. **Set Tip Percentage**: Choose or enter a tip percentage.
+7. **Review Order**: View your order summary, subtotal, tip, and total in real-time.
+8. **Save or Reset**: Save your order or reset to start over.
 
 ## Contribution
 
@@ -98,7 +126,6 @@ If you'd like to contribute:
    ```bash
    git push origin feature/new-feature
    ```
-
 5. Open a Pull Request.
 
 ## License
