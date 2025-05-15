@@ -176,58 +176,58 @@ export const tipOptions = [
 ]
 
 export const categoriesItems = [
-    {
-      id: 1,
-      name: 'Plates of the Day',
-      background: 'white',
-      image: 'pizza.svg',
-    },
+    // {
+    //   id: 1,
+    //   name: 'Plates of the Day',
+    //   background: 'white',
+    //   image: 'pizza.svg',
+    // },
     {
       id: 2,
       name: 'Appetizers',
       background: 'white',
-      image: '',
+      image: 'appetizers.jpg',
     },
     {
       id: 3,
       name: 'Burgers',
       background: 'white',
-      image: '',
+      image: 'burguers.jpg',
     },
     {
       id: 4,
       name: 'Tacos',
       background: 'white',
-      image: '',
+      image: 'tacos.jpg',
     },
     {
       id: 5,
       name: 'Beverages',
       background: 'white',
-      image: '',
+      image: 'beverages.jpg',
     },
     {
       id: 6,
       name: 'Kids Menu',
       background: 'white',
-      image: '',
+      image: 'kids-menu.jpg',
     },
     {
       id: 7,
       name: 'Desserts',
       background: 'white',
-      image: '',
+      image: 'desserts.jpg',
     },
     {
       id: 8,
       name: 'Pizzas',
       background: 'white',
-      image: '',
+      image: 'pizza.jpeg',
     },
     {
         id: 9,
         name: 'Steaks',
         background: 'white',
-        image: '',
+        image: 'steak.jpg',
     }
 ]

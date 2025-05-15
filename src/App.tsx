@@ -18,21 +18,21 @@ function App() {
     const [selectedCategory, setSelectedCategory] = useState("");
     const [orderOpen, setOrderOpen] = useState(false);
 
-    // Filtra los platillos por la categoría seleccionada
     const categoryItems = selectedCategory
         ? menuItems.filter(item => item.category === selectedCategory)
         : [];
     
     return (
         <>
-            <header className="py-6">
-                <h1 className="text-center font-black text-6xl">Tip Calculator</h1>
+            <header className="py-6 border-b-4 border-slate-200 flex flex-col items-center">
+                <img width={'180px'} src={'/img/restaurant-logo.png'} alt="" />
+                {/* <h1 className="text-center font-black text-6xl">Tip Calculator</h1> */}
             </header>
 
-            <main className={clsx("lg:max-w-12/12 mx-auto pt-12 grid xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1")}>
+            <main className={clsx("lg:max-w-12/12 mx-auto pt-6 grid xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-1 sm:grid-cols-1")}>
                 <div className="p-5">
-                    <h2 className="text-4xl font-black">Menu</h2>
-                    <div className="mt-8 grid grid-cols-1 gap-2">
+                    <h2 className="text-3xl text-center font-extralight create-order-label">Create your order</h2>
+                    <div className="mt-8 grid grid-cols-1 gap-2 border-t-2 border-slate-200 pt-4 pb-10">
                         <div className={clsx("rounded-lg relative", selectedCategory && "col-span-2 min-h-[300px]")}>
                             <AnimatePresence mode="wait">
                                 {!selectedCategory ? (
@@ -67,8 +67,8 @@ function App() {
                                         >
                                             <FontAwesomeIcon icon={faArrowLeft} size="xl" />
                                         </button>
-                                        <h3 className="text-2xl font-bold mb-4 text-center">{selectedCategory}</h3>
-                                        <div className="grid gap-2 mt-4 menu-items-container sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                                        <h3 className="text-2xl font-bold mb-4 text-center category-name-label">{selectedCategory}</h3>
+                                        <div className="grid gap-2 mt-6 menu-items-container sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                                             {categoryItems.length === 0 && <p>No items in this category.</p>}
                                             {categoryItems.map(item => (
                                                 <MenuItem key={item.id} item={item} addItem={addItem} />
@@ -140,12 +140,14 @@ function App() {
             {/* Pestaña fija para abrir la orden */}
             {!orderOpen && (
                 <button
-                    className="cursor-pointer fixed left-1/2 bottom-0 z-50 -translate-x-1/2 bg-slate-800 text-white px-8 py-3 rounded-t-lg shadow-lg flex items-center gap-2 font-bold text-lg"
+                    className="cursor-pointer fixed left-1/2 bottom-0 z-50 -translate-x-1/2 bg-slate-800 text-white px-8 py-3 rounded-t-lg shadow-lg flex justify-center items-center gap-2 font-bold text-lg"
                     onClick={() => setOrderOpen(true)}
                     aria-label="Open Order"
                 >
                     <FontAwesomeIcon icon={faChevronUp} />
-                    Open Order
+                    <p>
+                        Open Order
+                    </p>
                 </button>
             )}
             </main>

@@ -7,19 +7,23 @@ type MenuItemProps = {
 
 export default function MenuItem({item, addItem} : MenuItemProps) {
 	return (
-		<button 
-            type="button" 
-            className="cursor-pointer p-3 flex justify-between items-center text-lg rounded-lg"
+		<div 
+            className="p-3 flex justify-between items-center text-lg rounded-lg"
             onClick={() => addItem(item)}
             title={item.name}
         >
-            <img width={'40vh'} src={`/img/${item.image}`} alt={item.image} className="pr-1.5"/>
-            <p className="truncate font-medium">
-                {item.name}
-            </p>
+            <div>
+                <p className="truncate font-semibold text-xl">
+                    {item.name}
+                </p>
+                <p className="text-slate-400">
+                    {/* {item.description}	 */}
+                    Short description of the item here.
+                </p>
+            </div>
             <p className="font-black">
                 ${item.price}
             </p>
-        </button>	
+        </div>	
 	)
 }
