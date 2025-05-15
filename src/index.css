@@ -16,6 +16,13 @@ header {
     }
 }
 
+.menu-categories-container > button {
+    background-color: #A1E3F9;
+    &:hover {
+        background-color: #D1F8EF
+    }
+}
+
 .order-container {
     background-color: #D1F8EF;
 }
