@@ -8,7 +8,7 @@ type MenuItemProps = {
 export default function MenuItem({item, addItem} : MenuItemProps) {
 	return (
 		<div 
-            className="p-3 flex justify-between items-center text-lg rounded-lg"
+            className="p-3 flex justify-between items-center text-lg rounded-lg cursor-pointer"
             onClick={() => addItem(item)}
             title={item.name}
         >

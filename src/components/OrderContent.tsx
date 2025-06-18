@@ -13,7 +13,8 @@ type OrderContentProps = {
 }
 
 export default function OrderContent({order, removeItemFromOrder, increaseQuantity, decreaseQuantity, maxItems, minItems} : OrderContentProps) {
-  return (
+    console.log(order);
+    return (
     <div>
         <h2 className='font-black text-4xl'>Order</h2>
 
@@ -26,10 +27,9 @@ export default function OrderContent({order, removeItemFromOrder, increaseQuanti
                     order.map( item => (
                         <div key={item.id} className="flex justify-between items-center py-5 border-b border-b-white last-of-type:border-b-0 ">
                             <div className="flex items-center space-x-4">
-                                <img className="w-16 h-16 object-cover not-lg:hidden lg" src={`/img/${item.image}`} alt="" />
                                 <div>
                                     <p className="text-lg">
-                                        <span className="font-medium">{item.name}</span>{/*  - <span className="font-semibold">{formatCurrency(item.price)}</span> */}
+                                        <span className="font-medium">{item.name}</span>
                                     </p>
                                     <p className="space-x-2">
                                         <button className="btn-change-quantity" onClick={() => decreaseQuantity(item.id)} disabled={item.quantity === minItems}>
