@@ -1,17 +1,17 @@
-# Restaurant Order & Tip Calculator
+# My Restaurant App
 
-This project is a **Restaurant Order & Tip Calculator** application built with **React**, **TypeScript**, and **Vite**. It allows users to browse menu categories, select items, adjust quantities, calculate tips, and view order totals in a modern, responsive UI.
+A modern restaurant order and tip calculator built with **React**, **TypeScript**, and **Vite**. Users can browse menu categories, add items to their order, adjust quantities, set a tip percentage, and view real-time totals—all in a responsive, animated interface.
 
 ## Features
 
-- **Category Selection**: Browse menu items by category with animated transitions.
-- **Interactive Menu**: Add menu items to your order with a single click.
-- **Quantity Management**: Increase or decrease the quantity of each item.
-- **Tip Calculation**: Adjust the tip percentage and automatically calculate the total.
-- **Dynamic Totals**: Displays the subtotal, tip amount, and grand total in real-time.
-- **Order Drawer**: Slide-up order summary with editable contents.
-- **Modern UI**: Styled with **TailwindCSS** and animated with **Framer Motion**.
-- **Responsive Design**: Works on desktop and mobile devices.
+- **Category Browsing**: Explore menu items by category with smooth transitions.
+- **Add to Order**: Click any menu item to add it to your order.
+- **Quantity Controls**: Increase or decrease item quantities with intuitive buttons.
+- **Tip Calculation**: Adjust the tip percentage and see the tip amount update instantly.
+- **Order Summary Drawer**: Slide-up panel to review and edit your order.
+- **Real-Time Totals**: Subtotal, tip, and grand total update as you make changes.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Modern UI**: Styled with TailwindCSS and animated with Framer Motion.
 
 ## Project Structure
 
@@ -65,69 +65,40 @@ src/
 
 ## Installation
 
-1. Clone this repository:
-   ```bash
+1. Clone the repository:
+   ```sh
    git clone https://github.com/GilpiDv/myrestaurant-app.git
-   cd tip-calculator
+   cd myrestaurant-app
    ```
 
 2. Install dependencies:
-   ```bash
+   ```sh
    npm install
    ```
 
-## Available Scripts
-
-- `npm run dev`: Starts the development server.
-- `npm run build`: Builds the app for production.
-- `npm run preview`: Previews the built app.
-- `npm run lint`: Runs ESLint to analyze the code.
-
 ## Technologies Used
 
-- **React**: Library for building user interfaces.
-- **TypeScript**: A statically typed superset of JavaScript.
-- **Vite**: A fast build tool for modern web projects.
-- **TailwindCSS**: A utility-first CSS framework for styling.
-- **Framer Motion**: For smooth UI animations.
-- **clsx**: Utility for conditionally joining classNames.
-- **FontAwesome**: Icons to enhance the user interface.
+- **React** (with TypeScript)
+- **Vite**
+- **TailwindCSS**
+- **Framer Motion**
+- **FontAwesome**
+- **clsx**
+- **ESLint**
 
 ## How to Use
 
 1. Start the development server:
-   ```bash
+   ```sh
    npm run dev
    ```
+2. Open your browser at [http://localhost:5173](http://localhost:5173).
+3. Select a menu category to view items.
+4. Click items to add them to your order.
+5. Adjust item quantities and tip percentage as needed.
+6. Review your order and totals in the order drawer.
+7. Save or reset your order as desired.
 
-2. Open the app in your browser at [http://localhost:5173](http://localhost:5173).
+## Live Demo
 
-3. **Browse the Menu**: Select a category to view available items.
-4. **Add Items**: Click on menu items to add them to your order.
-5. **Adjust Quantities**: Use the plus/minus buttons to change item quantities.
-6. **Set Tip Percentage**: Choose or enter a tip percentage.
-7. **Review Order**: View your order summary, subtotal, tip, and total in real-time.
-8. **Save or Reset**: Save your order or reset to start over.
-
-## Contribution
-
-If you'd like to contribute:
-
-1. Fork the repository.
-2. Create a branch for your feature or bug fix:
-   ```bash
-   git checkout -b feature/new-feature
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Add new feature"
-   ```
-4. Push your changes:
-   ```bash
-   git push origin feature/new-feature
-   ```
-5. Open a Pull Request.
-
-## License
-
-This project is licensed under the MIT License.
+[https://my-new-restaurant-app.netlify.app/](https://my-new-restaurant-app.netlify.app/)
